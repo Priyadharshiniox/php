@@ -29,14 +29,14 @@
         </style> 
     </head>
     <body>
-        <form action="insert.php" method="post">
+        <form action="insert.php" method="post" enctype="multipart/form-data">
             <h3 style="text-align:center">Registration Form</h3>
 
             <div id="form">
 
                 <div>
                     <label>Name:</label>
-                    <input type="text" id="uname" name="uname"><br>
+                    <input type="text" id="name" name="name"><br>
                 </div>
                 <div>
                     <label>Password:</label>
@@ -63,9 +63,10 @@
                     <label>Date of Birth:</label><input type="date" name="dob" id="dob">
                 </div>
                 <div>
-                    <label>Image:</label><input type="file" name="image" id="image" accept="image/*">
+                    <label>Image:</label><input type="file" name="pic">
+                    
                 </div>
-                <input type="submit" name="reg" value="Register">
+                <input type="submit" name="reg" value="submit">
             </div>
 
         </form>

@@ -34,6 +34,13 @@ and open the template in the editor.
                     div{
                         text-align: center;
                     }
+                    table{
+                        border-collapse: collapse;
+                    }
+                    img{
+                        width:200px;
+                        height:200px;
+                    }
         </style>
     </head>
     <body>
@@ -42,8 +49,28 @@ and open the template in the editor.
         <form>
             <button class="register" formaction="register.php">Register</button>
             <button class="login" formaction="login.php">Login</button>
+            
         </form>
         </div>  
+        <div id="tab">
+        <?php
+        $db=mysqli_connect("localhost", "root", "admin@123", "registration");
+        $result="SELECT name, email , mobile, gender,image FROM user";
+        $display= mysqli_query($db, $result);
+          echo "<table width='60%' border='2px' align='center'><th>NAME</th><th>EMAIL</th><th>MOBILE</th><th>GENDER</th><th>PICTURE</th>";
+            while ($data = mysqli_fetch_array($display)) {
+                echo '<tr>';
+                echo '<td>' . $data['name'] . '</td>';
+                echo '<td>' . $data['email'] . '</td>';
+                echo '<td>' . $data['mobile'] . '</td>';
+                echo '<td>' . $data['gender'] . '</td>';
+                echo "<td> <img src= '".$data['image']."'></td>";
+                echo '</tr>';
+            }
+            echo '</table>';
+            mysqli_close($db);
+            ?>
+        </div>
     </body>
 
 </html>

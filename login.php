@@ -45,16 +45,18 @@
         <h3 style="text-align:center">Login Form</h3>
                       
         <div id="form">
+            <form action="loginverify.php" method="post">
                           
                          <div>
                              <label>Username:</label>
-                             <input type="text" id="name"><br>
+                             <input type="text" id="name" name="name" required><br>
                          </div>
                          <div>
                              <label>Password:</label>
-                             <input type="text" id="pswd" name="password"><br>
+                             <input type="password" id="password" name="password" required><br>
                          </div>
                         <button class="login">Login</button>
+            </form>
         </div>
     </body>
 </html>
