@@ -20,12 +20,12 @@ if (isset($_POST['reg'])) {
    $result= mysqli_query($db, $query) or die("Error!!!!!!!");
     if ($result)
         {
-        echo 'inserted';
+        header("refresh:1;url=login.php");
     }
  else {
         echo 'error';    
     }
 }
 
-//header("refresh:1;url=login.php");
+
 ?>
